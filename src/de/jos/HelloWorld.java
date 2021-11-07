@@ -1,8 +1,12 @@
 package de.jos;
 
+import org.itk.simple.*;
+
 public class HelloWorld {
 
     public static void main(String[] args) {
-	// write your code here
+        var resultImage = SimpleITK.elastix(SimpleITK.readImage("fixedImage.png"), SimpleITK.readImage("movingImage.png"), "translation");
+
+        SimpleITK.show(resultImage, "Hello World: Python", true);
     }
 }
